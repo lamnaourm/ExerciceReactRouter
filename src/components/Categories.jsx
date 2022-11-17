@@ -14,7 +14,13 @@ export default function Categories() {
     getData().then(categories => setCategories(categories));
   }, []);
   return (
-    <div className='grid'>
+    <div className='list'>
+      {
+        categories.map(item => <div className='card'> 
+              <img src={item.image} />
+              <h2>{item.name}</h2>
+        </div>)
+      }
     </div>
   )
 }
