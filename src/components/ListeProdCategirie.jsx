@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ListeProdCategirie = () => {
   const { id } = useParams();
   const [produits, setProduits] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
@@ -21,7 +22,7 @@ const ListeProdCategirie = () => {
         {produits.map(item => <div className='card' key={item.id}>
               <img src={item.images[0]} />
               <h2>{item.title}</h2>
-              <button>Plus de details</button>
+              <button onClick={() => navigate(`/produits/${item.id}`)}>Plus de details</button>
         </div> )}
     </div>
   );

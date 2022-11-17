@@ -96,4 +96,18 @@
   background-color: #555;
 }
 
+table {
+  font-size: 20px;
+}
+
+table td {
+  padding: 20px;
+}
+table td:nth-child(1){
+  font-weight: bold;
+}
+table img {
+  width: 25%;
+  margin: 10px;
+}
 
