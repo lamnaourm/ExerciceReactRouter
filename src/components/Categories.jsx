@@ -19,6 +19,7 @@ export default function Categories() {
         categories.map(item => <div className='card'> 
               <img src={item.image} />
               <h2>{item.name}</h2>
+              <button>Liste des produits</button>
         </div>)
       }
     </div>
