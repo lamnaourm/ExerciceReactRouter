@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Outlet, useNavigate } from 'react-router-dom';
 
 export default function Categories() {
 
   const [categories, setCategories] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = async () => {
@@ -20,9 +22,11 @@ export default function Categories() {
         categories.map(item => <div className='card' key={item.id}> 
               <img src={item.image} />
               <h2>{item.name}</h2>
-              <button>Liste des produits</button>
+              <button onClick={() => navigate(`/categories/${item.id}`)}>Liste des produits</button>
         </div>)
       }
+
+      <Outlet />
     </div>
   )
 }
